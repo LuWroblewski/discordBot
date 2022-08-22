@@ -19,21 +19,28 @@ client.on("ready", () => {
 
 client.on("interactionCreate", interaction => {
   if (interaction.isChatInputCommand()) {
+   let user = interaction.options.getUser('user')
 const { commandName } = interaction;
+
+if(commandName == `ajuda`){
+  return interaction.reply({
+    content: `Para usar algum comando digite / oNomeDoComando e a pessoa. Exemplo: /beijo lexyBot`
+  })
+  }
 
 if(commandName == `sexo`){
 return interaction.reply({
-  content: `<@${interaction.user.id}> voce fez sexo com <@${client.user.id}>`
+  content: `<@${interaction.user.id}> voce fez sexo com ${user}`
 })
 }
 else if(commandName == `beijo`){
   return interaction.reply({
-    content: `<@${interaction.user.id}> voce beijou <@${client.user.id}>`
+    content: `<@${interaction.user.id}> voce beijou ${user}`
   })
   }
 else if(commandName == `abraço`){
   return interaction.reply({
-    content: `<@${interaction.user.id}> voce abraçou <@${client.user.id}>`
+    content: `<@${interaction.user.id}> voce abraçou ${user}`
   })
   }  
 }

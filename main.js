@@ -35,5 +35,4 @@ else if(commandName == `abraço`){
   }  
 }
 })
-// ${client.GuildMember}
 client.login(token); 

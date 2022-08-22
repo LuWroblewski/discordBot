@@ -1,3 +1,6 @@
+//Codigo feito por mim
+//Se quiser entrar em contato: #Lexy#3138
+
 const { userMention } = require('discord.js');
 const discord = require('discord.js');
 const { GatewayIntentBits  } = discord;

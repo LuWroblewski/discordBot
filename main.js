@@ -18,9 +18,7 @@ client.on("ready", () => {
   })
 })
 
-/*,ephemeral: true  */
-
-client.on("guildMemberAdd", member => {
+client.on("guildMemberAdd",  member => {
   member.guild.channels.cache.get('1013494771517497374').send({embeds: [new discord.EmbedBuilder().setDescription(`bem vindo ${member.user} `)
   .setTitle('Bem vindo ao server de teste :partying_face: ')
   .addFields(
@@ -35,18 +33,21 @@ client.on("guildMemberAdd", member => {
       .setCustomId('membro')
       .setLabel('Membro')
       .setStyle(ButtonStyle.Danger)
-      )]})
-      client.on('interactionCreate', interaction => {
-        if (interaction.customId === 'membro') interaction.member.roles.add('1013318472412954726')
-      interaction.reply({
+      )]
+    })
+
+      client.on('interactionCreate', async interaction => {
+        
+if (interaction.customId === 'membro'){ interaction.member.roles.add('1013318472412954726')
+await  interaction.update ({components:[]})
+      interaction.followUp({
         embeds: [new discord.EmbedBuilder().setDescription(`Cargo <@&1013318472412954726> adicionado para ${member.user}`)
         .setTitle(':white_check_mark: Cargo adicionado')
      .setColor('Purple')
-     ]})
+     ]
+    })
+  }
       })
-
-
- 
 })
 
 client.on("interactionCreate", interaction => {
